@@ -69,7 +69,7 @@ class AlumnosDao
             
  			$registro = null; /*Se declara una variable  que almacenará el registro obtenido de la BD*/
             
- 			$sentenciaSQL = $this->conexion->prepare("SELECT noControl,nombre,apellido1,apellido2,idcarrera,vigente,correo FROM alumnos WHERE numcontrol=?"); /*Se arma la sentencia sql para seleccionar todos los registros de la base de datos*/
+ 			$sentenciaSQL = $this->conexion->prepare("SELECT noControl,nombre,apellido1,apellido2,idcarrera,vigente,correo FROM alumnos WHERE noControl=?"); /*Se arma la sentencia sql para seleccionar todos los registros de la base de datos*/
  			$sentenciaSQL->execute([$numcontrol]);/*Se ejecuta la sentencia sql, retorna un cursor con todos los elementos*/
             
              /*Obtiene los datos*/

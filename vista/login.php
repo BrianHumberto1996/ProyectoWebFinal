@@ -3,7 +3,7 @@
   $usuario = isset($_POST["user"], $_POST["pass"]);
   if($usuario){
 
-    $nwCliente = new SoapClient("http://192.168.1.157:8010/WebServiceLogin.asmx?WSDL");
+    $nwCliente = new SoapClient("http://192.168.1.67:8010/WebServiceLogin.asmx?WSDL");
     $argl = array("usuario"=>$_POST["user"],"pass"=>$_POST["pass"]);
     $answ = json_decode($nwCliente->login($argl)->loginResult);
     if($answ != null){

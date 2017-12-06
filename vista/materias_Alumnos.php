@@ -6,7 +6,10 @@
         $alumno->materia = $_POST["materia"];
         $alumno->noControl = $_GET["editar"];
         $ob->agregar($alumno);
+        
+        
     }
+
 ?>
 
 <!DOCTYPE html>
@@ -59,15 +62,14 @@
   <?php
         require_once "../datos/AlumnosDao.php";
         $dao = new AlumnosDao();
-        $al = $dao->obtenerUno($_POST["usuario"]);
+        $al = $dao->obtenerUno($_GET["editar"]);
         
-        $client = new SoapClient("http://http://192.168.1.157:8010/WebServiceLogin.asmx?WSDL");
-        $ar = array("idCarrera"=>$al->idcarrera);
-        var_dump($ar);
-        $result = json_decode($client->Materias($ar)->MateriasPorCarreraResult);
+        $client = new SoapClient("http://192.168.1.67:8010/WebServiceLogin.asmx?WSDL");
+        $ar = array("id"=>$_GET["editar"]);
+        $result = json_decode($client->materias($ar)->materiasResult);
         if($result != null){
             foreach($result as $materia){
-                echo "<option value='".$materia->nombre."'>$materia->nombre</option>";
+                echo "<option value='".$materia->materia."'>$materia->materia</option>";
             }
         }
     ?>
