@@ -50,7 +50,7 @@ if($agr){
     <span>tutor</span>
     
 </div>
-<button type="button" class="btn btn-primary">Volver al grupo</button>    
+<a href="lista_gru2pos.php" type="button" class="btn btn-primary">Volver al grupo</a>    
 <h2>Alumnos del grupo</h2>
     
 
