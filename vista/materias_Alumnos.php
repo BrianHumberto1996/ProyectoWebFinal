@@ -1,4 +1,5 @@
 <?php
+session_start();
     if(isset($_POST["materia"])){
         require_once "../datos/AlumnosMateriasDao.php";
         $ob = new ALumnosMateriasDao();
@@ -46,7 +47,7 @@
 <a  href="lista_gru2pos.php" type="button" class="btn btn-primary">Grupos</a>
 
 </form>
-<span style="font-family: Arial; margin-left: 700px; font-weight: bold" >Juan Peres </span>
+<span style="font-family: Arial; margin-left: 700px; font-weight: bold" ><?php echo $_SESSION["usuario"]->nombre; ?> </span>
 <button type="button" class="btn btn-outline-warning">cerrar secion</button>
 </nav>
 <h3>Registro de materias para el alumno</h3>
