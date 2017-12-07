@@ -46,7 +46,7 @@
 
 </form>
 <span style="font-family: Arial; margin-left: 700px; font-weight: bold" > <?php    session_start(); echo $_SESSION["usuario"]->nombre; ?> </span>
-<button type="button" class="btn btn-outline-warning">cerrar secion</button>
+<button type="button" class="btn btn-outline-warning">cerrar sesión</button>
 
 </nav>
 
