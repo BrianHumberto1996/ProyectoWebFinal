@@ -7,7 +7,13 @@ if($agr){
     $ag->noControl = $_POST["agregar"];
     $ag->idGrupo = $_GET["editar"];
     $ob->agregar($ag);
-    
+
+}
+
+if(isset($_POST["eliminar"])){
+  require_once "../datos/Alumnos_grupoDao.php";
+  $obj=new Alumnos_grupoDao();
+  $obj->eliminar($_POST["eliminar"]);
 }
 ?>
 
@@ -26,17 +32,17 @@ if($agr){
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/font-awesome.css">
     <link rel="stylesheet" href="css/estilos.css">
-    
+
     <link rel="stylesheet" href="datatables/DataTables-1.10.16/css/dataTables.bootstrap4.css">
-   
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 </head>
 
 <body>
- 
+
 <nav class="navbar navbar-inverse bg-primary">
-    
+
 <form class="form-inline my-2 my-lg-0">
 <button type="button" class="btn btn-primary" style="font-size: 20px; font-weight: bold">Sistema de tutorias</button>
 <button type="button" class="btn btn-primary">inicio</button>
@@ -45,22 +51,22 @@ if($agr){
 <span style="font-family: Arial; margin-left: 700px; font-weight: bold" >Juan Peres </span>
 <button type="button" class="btn btn-outline-warning">cerrar secion</button>
 </nav>
-<h3>Grupo de Tutorias</h3>    
+<h3>Grupo de Tutorias</h3>
 <div style="border: solid; border-color: black;">
     <span>tutor</span>
-    
+
 </div>
-<a href="lista_gru2pos.php" type="button" class="btn btn-primary">Volver al grupo</a>    
+<a href="lista_gru2pos.php" type="button" class="btn btn-primary">Volver al grupo</a>
 <h2>Alumnos del grupo</h2>
-    
+
 
     <?php
 		require_once "../datos/AlumnosDao.php";
 		$dao = new AlumnosDao();
-		$lista = $dao->obtenerTodos($_POST["editar"]);
+		$lista = $dao->obtenerTodos($_GET["editar"]);
 
-                
-    
+
+
 		if($lista != null){
 			echo "<table id='tablita' class='table' border='1'>
 			<thead class='thead-inverse'>
@@ -70,7 +76,7 @@ if($agr){
 				<th scope='col'></th>
 				<th scope='col'></th>
 				<th scope='col'></th>
-				
+
 			  </tr>
 			</thead>
 			<tbody>";
@@ -78,23 +84,23 @@ if($agr){
 				echo "<tr>
 				<th scope='row'>".$ls->numcontrol."</th>
 				<th>".$ls->nombre."</th>
-				
-                
+
+
                 <th>
                 <center>
                 <form action='materias_alumnos.php' method='get'>
                 <button type='submit' name='editar' value='".$ls->numcontrol."' class='btn btn-primary btn-lg'>
-                <span class='fa fa-pencil fa-lg'></span>                
+                <span class='fa fa-pencil fa-lg'></span>
                 Editar Materias
                 </button>
                 </form>
                 </th>
                 </center>
-                
+
 				<th>
                 <center>
                 <a href='reg_alumnos_grupo.php' class='btn btn-warning btn-lg'>
-                <span class='fa fa-pencil fa-lg'></span>                
+                <span class='fa fa-pencil fa-lg'></span>
                 Editar Horarios
                 </a>
                 </th>
@@ -102,17 +108,19 @@ if($agr){
 
                 <th>
                 <center>
-                <a href='reg_alumnos_grupo.php' class='btn btn-danger btn-lg'>
-                <span class='fa fa-trash fa-lg'></span>                
+                <form method='post'>
+                <button class='btn btn-danger btn-lg' name='eliminar' value='".$ls->numcontrol."'>
+                <span class='fa fa-trash fa-lg'></span>
                 Eliminar
-                </a>
+                </button>
+                </form>
                 </th>
                 </center>
-				
-                
-                
-                
-               
+
+
+
+
+
 				</tr>";
 			  }
 			echo "</tbody>
@@ -127,8 +135,8 @@ if($agr){
 		$dao = new CarrerasDao();
 		$lista = $dao->obtenerTodos();
 
-                
-    
+
+
 		if($lista != null){
 			echo "<table id='tablitita' class='table' border='1'>
 			<thead class='thead-inverse'>
@@ -137,8 +145,8 @@ if($agr){
 				<th scope='col'>Alumno</th>
 				<th scope='col'>Carrera</th>
 				<th scope='col'></th>
-				
-				
+
+
 			  </tr>
 			</thead>
 			<tbody>";
@@ -147,27 +155,27 @@ if($agr){
 				<th scope='row'>".$ls->noControl."</th>
 				<th>".$ls->alumno."</th>
 				<th>".$ls->carrera."</th>
-				
-          
-                
+
+
+
 				<th>
                 <center>
                 <form action='' method='get'>
                 <input name='editar' value='".$_GET["editar"]."' hidden='true'>
                 <button class='btn btn-warning btn-lg' name='agregar' value='".$ls->noControl."'>
-                <span class='fa fa-pencil fa-lg'></span>                
+                <span class='fa fa-pencil fa-lg'></span>
                 Añadir al Grupo
                 </a>
                 </form>
                 </th>
                 </center>
 
-             
-				
-                
-                
-                
-               
+
+
+
+
+
+
 				</tr>";
 			  }
 			echo "</tbody>
@@ -185,8 +193,8 @@ if($agr){
     <span>Humberto Diaz</span>
     <br>
     <span>Jonathan Camacho Lopez</span>
-    
-    
+
+
 </footer>
 
         <script src="js/jquery-3.2.1.min.js"></script>
@@ -215,7 +223,7 @@ if($agr){
             });
 
         </script>
-    
+
        <script>
             $(document).ready(function() {
 
@@ -235,8 +243,8 @@ if($agr){
             });
 
         </script>
-    
-   
+
+
 
 
 </body>
