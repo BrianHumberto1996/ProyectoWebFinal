@@ -1,16 +1,4 @@
-
 <?php
-   session_start();
- $salir = isset($_POST["outt"]);
- if($salir){
-     unset($_SESSION["usuario"]);
- }
-
- $user = isset($_SESSION["usuario"]);
- if(!$user){
-     echo "<script>location.href='Login.php'</script>";
- }
-	
 $agr = isset($_GET["agregar"]);
 if($agr){
     require_once "../datos/GruposDao.php";
@@ -61,10 +49,8 @@ if(isset($_POST["eliminar"])){
 <a href="lista_gru2pos.php" type="button" class="btn btn-primary" >Grupos</a>
 
 </form>
-<span style="font-family: Arial; margin-left: 700px; font-weight: bold" ><?php echo $_SESSION["usuario"]->nombre; ?> </span>
-<form class=""  method="post">
-<button type="submit" class="btn btn-outline-warning" name="outt">cerrar sesión</button>
-</form>
+<span style="font-family: Arial; margin-left: 700px; font-weight: bold" ><?php session_start(); echo $_SESSION["usuario"]->nombre; ?> </span>
+<button type="button" class="btn btn-outline-warning">cerrar secion</button>
 </nav>
 <h3>Grupo de Tutorias</h3>
 <div style="border: solid; border-color: black;">

@@ -1,4 +1,14 @@
 <?php
+session_start();
+$salir = isset($_POST["outt"]);
+ if($salir){
+     unset($_SESSION["usuario"]);
+ }
+
+ $user = isset($_SESSION["usuario"]);
+ if(!$user){
+     echo "<script>location.href='Login.php'</script>";
+ }
 if(isset($_POST["tutores"], $_POST["actividad"])){
     require_once "../datos/GrupotutoriasDao.php";
     $ob = new Grupotutorias();
@@ -22,11 +32,11 @@ if(isset($_POST["tutores"], $_POST["actividad"])){
     
 <form class="form-inline my-2 my-lg-0">
 <button type="button" class="btn btn-primary" style="font-size: 20px; font-weight: bold">Sistema de tutorias</button>
-<button type="button" class="btn btn-primary">inicio</button>
-<button type="button" class="btn btn-primary">Grupos</button>
+<a href="Home.php" type="button" class="btn btn-primary">inicio</a>
+<a href="lista_gru2pos.php" type="button" class="btn btn-primary">Grupos</a>
 
 </form>
-<span style="font-family: Arial; margin-left: 700px; font-weight: bold" >Juan Peres </span>
+<span style="font-family: Arial; margin-left: 700px; font-weight: bold" ><?php echo $_SESSION["usuario"]->nombre; ?></span>
 <button type="button" class="btn btn-outline-warning">cerrar secion</button>
 
 </nav>
