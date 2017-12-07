@@ -153,7 +153,7 @@ if($agr){
 				<th>
                 <center>
                 <form action='' method='get'>
-                <input name='editar' value='".$_GET["editar"]."' hidden='true'>
+                <input name='editar' value='".$_POST["editar"]."' hidden='true'>
                 <button class='btn btn-warning btn-lg' name='agregar' value='".$ls->noControl."'>
                 <span class='fa fa-pencil fa-lg'></span>                
                 Añadir al Grupo
