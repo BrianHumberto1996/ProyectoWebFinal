@@ -78,7 +78,14 @@
 <button type="submit" class="btn btn-success">Agregar</button> 
 </form>
     </div>
-<button type="button" class="btn btn-primary">Volver al grupo</button>    
+    
+<?php
+        echo "
+        <form action='Alumnos_grupos (2).php' method='post'>
+        <button type='submit' class='btn btn-primary' name='editar' value='".$_GET["grupo"]."'>Volver al grupo</button> 
+        </form>";
+        ?>
+        
 <h2>Alumnos del grupo</h2>
     
 <table class="table table-hover table-inverse">

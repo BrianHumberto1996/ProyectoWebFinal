@@ -61,8 +61,8 @@ if(isset($_POST["tutores"], $_POST["actividad"])){
     
     <button type="submit" class="btn btn-primary">Guardar</button>
         
-    <button type="button" class="btn btn-info">Gestionar alumnos del grupo</button>
-    <button type="button" class="btn btn-success">Volver a los Grupos</button>
+    
+    <a href="lista_gru2pos.php" type="button" class="btn btn-success">Volver a los Grupos</a>
     
     </div>
         </form>

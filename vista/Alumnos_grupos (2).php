@@ -40,9 +40,10 @@ if($agr){
 <form class="form-inline my-2 my-lg-0">
 <button type="button" class="btn btn-primary" style="font-size: 20px; font-weight: bold">Sistema de tutorias</button>
 <button type="button" class="btn btn-primary">inicio</button>
+<a href="lista_gru2pos.php" type="button" class="btn btn-primary" >Grupos</a>
 
 </form>
-<span style="font-family: Arial; margin-left: 700px; font-weight: bold" >Juan Peres </span>
+<span style="font-family: Arial; margin-left: 700px; font-weight: bold" ><?php session_start(); echo $_SESSION["usuario"]->nombre; ?> </span>
 <button type="button" class="btn btn-outline-warning">cerrar secion</button>
 </nav>
 <h3>Grupo de Tutorias</h3>    
@@ -83,6 +84,7 @@ if($agr){
                 <th>
                 <center>
                 <form action='materias_alumnos.php' method='get'>
+                <input name='grupo' value='".$_POST["editar"]."' hidden='true'>
                 <button type='submit' name='editar' value='".$ls->numcontrol."' class='btn btn-primary btn-lg'>
                 <span class='fa fa-pencil fa-lg'></span>                
                 Editar Materias
