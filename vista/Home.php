@@ -25,11 +25,11 @@
 <form class="form-inline my-2 my-lg-0">
 <button type="button" class="btn btn-primary" style="font-size: 20px; font-weight: bold">Sistema de tutorias</button>
 <button type="button" class="btn btn-primary">inicio</button>
-<button type="button" class="btn btn-primary">Grupos</button>
+<a href="lista_gru2pos.php" type="button" class="btn btn-primary">Grupos</a>
 
 </form>
 <span style="font-family: Arial; margin-left: 700px; font-weight: bold" ><?php echo $_SESSION["usuario"]->nombre; ?> </span>
-<button type="button" class="btn btn-outline-warning" name="out">cerrar secion</button>
+<button type="button" class="btn btn-outline-warning" name="out">cerrar sesión</button>
 
 </nav>
 
