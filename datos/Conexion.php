@@ -6,7 +6,7 @@ class Conexion
     private static $db = 'bd_Asesorias_pw' ;
     private static $servidor = 'localhost:3306' ;
     private static $usuario = 'root';
-    private static $password = 'root';
+    private static $password = 'humber';
     private static $conexion  = null;
 
     public function __construct() {

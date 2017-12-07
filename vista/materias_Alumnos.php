@@ -1,5 +1,15 @@
 <?php
-session_start();
+   session_start();
+ $salir = isset($_POST["outt"]);
+ if($salir){
+     unset($_SESSION["usuario"]);
+ }
+
+ $user = isset($_SESSION["usuario"]);
+ if(!$user){
+     echo "<script>location.href='Login.php'</script>";
+ }
+	
     if(isset($_POST["materia"])){
         require_once "../datos/AlumnosMateriasDao.php";
         $ob = new ALumnosMateriasDao();
@@ -48,7 +58,9 @@ session_start();
 
 </form>
 <span style="font-family: Arial; margin-left: 700px; font-weight: bold" ><?php echo $_SESSION["usuario"]->nombre; ?> </span>
-<button type="button" class="btn btn-outline-warning">cerrar secion</button>
+<form class=""  method="post">
+<button type="submit" class="btn btn-outline-warning" name="outt">cerrar sesión</button>
+</form>
 </nav>
 <h3>Registro de materias para el alumno</h3>
 <div style="border: solid; border-color: black;">
