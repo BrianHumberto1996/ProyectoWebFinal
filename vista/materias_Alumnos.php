@@ -65,7 +65,7 @@
         $al = $dao->obtenerUno($_GET["editar"]);
         
         $client = new SoapClient("http://192.168.1.67:8010/WebServiceLogin.asmx?WSDL");
-        $ar = array("id"=>$_GET["editar"]);
+        $ar = array("id"=>$al->idcarrera);
         $result = json_decode($client->materias($ar)->materiasResult);
         if($result != null){
             foreach($result as $materia){
