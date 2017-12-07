@@ -1,10 +1,10 @@
 <?php
-$agr = isset($_POST["agregar"]);
+$agr = isset($_GET["agregar"]);
 if($agr){
     require_once "../datos/GruposDao.php";
     $ob = new GruposDao();
     $ag = new AlumnosGrupo();
-    $ag->noControl = $_POST["agregar"];
+    $ag->noControl = $_GET["agregar"];
     $ag->idGrupo = $_GET["editar"];
     $ob->agregar($ag);
 
