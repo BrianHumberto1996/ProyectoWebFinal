@@ -96,6 +96,25 @@ class TutoresDao
 	 }//finally{
            Conexion::cerrarConexion();
       }
+	public function eliminar($id)
+	{
+		try
+		{
+			$this->conectar();
+
+            $sentenciaSQL = $this->conexion->prepare("DELETE FROM tutores WHERE id = ?");
+
+			$sentenciaSQL->execute(array($id));
+            return true;
+		} catch (Exception $e)
+		{
+            return false;
+		}//finally{
+//            Conexion::cerrarConexion();
+//        }
+
+	}
+
  	}
     
 

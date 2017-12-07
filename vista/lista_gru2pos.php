@@ -1,3 +1,18 @@
+ <?php
+       
+		
+		if(isset($_POST["eliminar"])){
+			require_once "../datos/GruposDao.php";
+			$dao = new GruposDao();
+			$dao->eliminar($_POST["eliminar"]);
+		
+		}
+			
+
+			
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -74,13 +89,15 @@
                 </form>
                 </th>
                 </center>
-
+				
                 <th>
                 <center>
-                <a href='reg_alumnos_grupo.php' class='btn btn-danger btn-lg'>
-                <span class='fa fa-trash fa-lg'></span>
+				<form method='post'>
+                <button class='btn btn-danger btn-lg' name='eliminar' value='".$ls->clave."'>
+                <span class='fa fa-trash fa-lg'></span> 
                 Eliminar
-                </a>
+                </button>
+				</form>
                 </th>
                 </center>
 

@@ -16,7 +16,7 @@
 	<title>Document</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/font-awesome.css">
-    <a href="Alumnos_grupos%20(2).php">Grupossss</a>
+    
 </head>
 <body>
     
@@ -25,7 +25,7 @@
 <form class="form-inline my-2 my-lg-0">
 <button type="button" class="btn btn-primary" style="font-size: 20px; font-weight: bold">Sistema de tutorias</button>
 <button type="button" class="btn btn-primary">inicio</button>
-    
+<button type="button" class="btn btn-primary">Grupos</button>    
 
 </form>
 <span style="font-family: Arial; margin-left: 700px; font-weight: bold" ><?php echo $_SESSION["usuario"]->nombre; ?> </span>
