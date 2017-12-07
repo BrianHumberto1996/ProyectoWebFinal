@@ -58,7 +58,7 @@
 <div class="form-group" style="width: 300px;">
     
 <form method="post">
-<select class="form-control" id="sel2" name="guardar">
+<select class="form-control" id="sel2" name="materia">
   <?php
         require_once "../datos/AlumnosDao.php";
         $dao = new AlumnosDao();
