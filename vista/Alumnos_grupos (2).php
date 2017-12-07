@@ -90,7 +90,7 @@ if(isset($_POST["eliminar"])){
                 <th>
                 <center>
                 <form action='materias_alumnos.php' method='get'>
-                <input name='grupo' value='".$_POST["editar"]."' hidden='true'>
+                <input name='grupo' value='".$_GET["editar"]."' hidden='true'>
                 <button type='submit' name='editar' value='".$ls->numcontrol."' class='btn btn-primary btn-lg'>
                 <span class='fa fa-pencil fa-lg'></span>
                 Editar Materias
@@ -163,7 +163,7 @@ if(isset($_POST["eliminar"])){
 				<th>
                 <center>
                 <form action='' method='get'>
-                <input name='editar' value='".$_POST["editar"]."' hidden='true'>
+                <input name='editar' value='".$_GET["editar"]."' hidden='true'>
                 <button class='btn btn-warning btn-lg' name='agregar' value='".$ls->noControl."'>
                 <span class='fa fa-pencil fa-lg'></span>
                 Añadir al Grupo
