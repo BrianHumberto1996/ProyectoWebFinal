@@ -42,7 +42,7 @@
  <input type="text" class="form-control" id="usr" placeholder="Usuario" name="user">
 </div>
 <div class="form-group1" style="margin-left: 5px" >
- <input type="text" class="form-control" id="usr" placeholder="Contraseña" name="pass">
+ <input type="password" class="form-control" id="usr" placeholder="Contraseña" name="pass">
 </div>
 <button type="submit" class="btn btn-outline-danger">Iniciar Sesion</button>
     </form>

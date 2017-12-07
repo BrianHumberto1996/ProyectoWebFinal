@@ -41,7 +41,7 @@
 <form class="form-inline my-2 my-lg-0">
 <button type="button" class="btn btn-primary" style="font-size: 20px; font-weight: bold">Sistema de tutorias</button>
 <button type="button" class="btn btn-primary">inicio</button>
-<a  href="Alumnos_grupos (2).php" type="button" class="btn btn-primary">Grupos</a>
+<a  href="lista_gru2pos.php" type="button" class="btn btn-primary">Grupos</a>
 
 </form>
 <span style="font-family: Arial; margin-left: 700px; font-weight: bold" >Juan Peres </span>
